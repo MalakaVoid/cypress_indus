@@ -1,0 +1,16 @@
+{
+    "name": "example",
+    "email": "exampleadmintestemailadres1s@gmail.com",
+    "password": "admin123",
+    "day": 1,
+    "month": 1,
+    "year": "2000",
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "123 Main St",
+    "country": "United States",
+    "state": "Nevada",
+    "city": "Las Vegas",
+    "zipCode": "89101",
+    "mobilePhone": "1234567890"
+}

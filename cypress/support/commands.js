@@ -25,11 +25,28 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', () => { 
-    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input')
-    .type('Admin')
+    
+    cy.visit('https://www.automationexercise.com/')
+    cy.get('body').should('be.visible')
+    cy.get('header .nav > li')
+    .eq(3)
+    .click();
 
-    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input')
-    .type('admin123')
+    cy.fixture('correctUser').then((user) => {
 
-    cy.get('.oxd-button').click()
+        cy.contains('Login to your account', { matchCase: false })
+
+        cy.get('.login-form [data-qa="login-email"]')
+        .type(user.email)
+    
+        cy.get('.login-form [data-qa="login-password"]')
+        .type(user.password)
+    
+        cy.get('.login-form [data-qa="login-button"]')
+        .click()
+    
+        cy.contains(' Logged in as ' + user.name)
+
+    })
+
 })

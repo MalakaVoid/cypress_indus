@@ -1,0 +1,6 @@
+{
+    "name": "testUser",
+    "email": "someemail@example.com",
+    "subject": "Some Subject",
+    "message": "Test message"
+}
